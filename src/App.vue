@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <Screen />
+    <Screen class="red" />
+    <HorizontalSlide />
+    <Screen class="blue" />
   </div>
 </template>
 
 <script>
 import Screen from "./components/Screen.vue";
+import HorizontalSlide from "./components/HorizontalSlide.vue";
 export default {
   name: "App",
   components: {
     Screen,
+    HorizontalSlide,
+  },
+  created: function () {
+    console.log("here I am");
+    document.getElementById("app").style.width = innerWidth;
+    document.getElementById("app").style.height = innerHeight;
   },
 };
 </script>
@@ -24,6 +33,20 @@ body {
   width: 100vw;
   /* display: flex; */
 }
+
+*::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+/* *::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+} */
+
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 0px solid slategrey;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,5 +54,12 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
+  overflow: auto;
+}
+.red {
+  background: red;
+}
+.blue {
+  background: blue;
 }
 </style>
