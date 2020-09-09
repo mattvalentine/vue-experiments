@@ -18,8 +18,11 @@ export default {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
 }
 .slide {
+  scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
   height: 100%;

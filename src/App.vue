@@ -7,6 +7,9 @@
 </template>
 
 <script>
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 import Screen from "./components/Screen.vue";
 import HorizontalSlide from "./components/HorizontalSlide.vue";
 export default {
@@ -15,7 +18,7 @@ export default {
     Screen,
     HorizontalSlide,
   },
-  created: function () {
+  created: function() {
     console.log("here I am");
     document.getElementById("app").style.width = innerWidth;
     document.getElementById("app").style.height = innerHeight;
@@ -55,6 +58,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
+  scroll-snap-type: y proximity;
 }
 .red {
   background: red;
