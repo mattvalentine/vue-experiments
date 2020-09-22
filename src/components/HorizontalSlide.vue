@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .slideholder {
   width: 100%;
   height: 100%;
@@ -24,6 +24,12 @@ export default {
 .slide {
   scroll-snap-align: start;
   flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.screen {
+  scroll-snap-align: start;
   width: 100%;
   height: 100%;
 }

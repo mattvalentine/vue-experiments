@@ -3,6 +3,7 @@
     <Screen class="red" />
     <HorizontalSlide />
     <Screen class="blue" />
+    <Gallery />
   </div>
 </template>
 
@@ -12,11 +13,14 @@ smoothscroll.polyfill();
 
 import Screen from "./components/Screen.vue";
 import HorizontalSlide from "./components/HorizontalSlide.vue";
+import Gallery from "./components/Gallery";
+
 export default {
   name: "App",
   components: {
     Screen,
     HorizontalSlide,
+    Gallery,
   },
   created: function() {
     console.log("here I am");
