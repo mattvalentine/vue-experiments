@@ -15,6 +15,7 @@ export default {
 
 <style scoped>
 .gallery {
+  /* background: url("../assets/dots.svg"); */
   display: flex;
   align-items: center;
   justify-content: center;

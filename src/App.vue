@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Screen class="red" />
+    <Screen class="dots" />
     <HorizontalSlide />
-    <Screen class="blue" />
+    <Screen class="hex" />
     <Gallery />
   </div>
 </template>
@@ -69,5 +69,12 @@ body {
 }
 .blue {
   background: blue;
+}
+.dots {
+  background: url("assets/dots.svg");
+}
+
+.hex {
+  background: url("assets/hexadots.svg");
 }
 </style>
