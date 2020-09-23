@@ -1,7 +1,15 @@
 <template>
-  <div class="gallery">
-    <div class="item" v-for="item in items" :key="item" @click="showItem(item)">
-      {{ item }}
+  <div class="container">
+    <div class="title"><h1>Title</h1></div>
+    <div class="gallery">
+      <div
+        class="item"
+        v-for="item in items"
+        :key="item"
+        @click="showItem(item)"
+      >
+        {{ item }}
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +19,7 @@ export default {
   name: "Gallery",
   data: function() {
     return {
-      items: [1, 2, 3, 4, 5, 6, "seven", "VIII"],
+      items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
   },
   methods: {
@@ -24,10 +32,27 @@ export default {
 </script>
 
 <style scoped>
-.gallery {
-  scroll-snap-align: start;
+.container {
   width: 100%;
+  /* height: 100%; */
   min-height: 100%;
+  scroll-snap-align: start;
+}
+.title {
+  height: 10%;
+  margin: 0px;
+}
+
+.title > h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin: 0px;
+  font-size: 7.5vh;
+}
+.gallery {
+  width: 100%;
+  /* height: auto; */
+  min-height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
