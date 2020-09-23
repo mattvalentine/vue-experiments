@@ -2,10 +2,12 @@
   <div id="app">
     <Welcome />
     <Screen class="dots" />
-    <HorizontalSlide id="history" />
+    <HorizontalSlide />
     <Screen class="hex" />
     <Gallery @showItem="showItem()" />
+    <Footer />
     <Overlay :show="showOverlay" />
+    <Drama :show="showDrama" />
   </div>
 </template>
 
@@ -18,6 +20,8 @@ import HorizontalSlide from "./components/HorizontalSlide";
 import Gallery from "./components/Gallery";
 import Overlay from "./components/Overlay";
 import Welcome from "./components/Welcome";
+import Footer from "./components/Footer";
+import Drama from "./components/Drama";
 
 export default {
   name: "App",
@@ -27,10 +31,13 @@ export default {
     Gallery,
     Overlay,
     Welcome,
+    Footer,
+    Drama,
   },
   data: function() {
     return {
       showOverlay: false,
+      showDrama: true,
     };
   },
   methods: {
@@ -59,7 +66,7 @@ export default {
     window.removeEventListener("resize", this.setsize);
   },
   mounted: function() {
-    const history = document.getElementById("history");
+    const history = document.getElementsByClassName("slideholder")[0];
     history.scrollLeft = history.scrollWidth - history.offsetWidth;
   },
 };
@@ -82,6 +89,7 @@ body {
 
 *::-webkit-scrollbar {
   width: 0.25em;
+  height: 0.25em;
 }
 
 /* *::-webkit-scrollbar-track {
@@ -104,16 +112,16 @@ body {
   scroll-snap-type: y proximity;
 }
 .red {
-  background: red;
+  background-color: red;
 }
 .blue {
-  background: blue;
+  background-color: blue;
 }
 .dots {
-  background: url("assets/dots.svg");
+  background-image: url("assets/dots.svg");
 }
 
 .hex {
-  background: url("assets/hexadots.svg");
+  background-image: url("assets/hexadots.svg");
 }
 </style>
