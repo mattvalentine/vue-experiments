@@ -3,7 +3,8 @@
     <Screen class="dots" />
     <HorizontalSlide />
     <Screen class="hex" />
-    <Gallery />
+    <Gallery @showItem="showItem()" />
+    <Overlay :show="showOverlay" />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ smoothscroll.polyfill();
 import Screen from "./components/Screen.vue";
 import HorizontalSlide from "./components/HorizontalSlide.vue";
 import Gallery from "./components/Gallery";
+import Overlay from "./components/Overlay";
 
 export default {
   name: "App",
@@ -21,9 +23,21 @@ export default {
     Screen,
     HorizontalSlide,
     Gallery,
+    Overlay,
+  },
+  data: function() {
+    return {
+      showOverlay: true,
+    };
+  },
+  methods: {
+    showItem: function() {
+      this.showOverlay = false;
+      console.log("toggle");
+      this.showOverlay = true;
+    },
   },
   created: function() {
-    console.log("here I am");
     document.getElementById("app").style.width = innerWidth;
     document.getElementById("app").style.height = innerHeight;
   },
