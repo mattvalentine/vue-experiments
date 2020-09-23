@@ -1,7 +1,11 @@
 <template>
-  <div class="screen slideholder">
-    <div class="slide">Screen Component</div>
-    <div class="slide">Screen Component</div>
+  <div class="slideholder">
+    <div class="slide red">Screen Component</div>
+    <div class="slide blue">Screen Component</div>
+    <div class="slide red">Screen Component</div>
+    <div class="slide blue">Screen Component</div>
+    <div class="slide red">Screen Component</div>
+    <div class="slide blue">Screen Component</div>
   </div>
 </template>
 
@@ -20,6 +24,7 @@ export default {
   overflow-x: scroll;
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
+  scroll-snap-align: start;
 }
 .slide {
   scroll-snap-align: start;
@@ -28,9 +33,11 @@ export default {
   height: 100%;
 }
 
-.screen {
-  scroll-snap-align: start;
-  width: 100%;
-  height: 100%;
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
 }
 </style>

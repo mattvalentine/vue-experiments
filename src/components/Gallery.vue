@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery screen">
+  <div class="gallery">
     <div class="item" v-for="item in items" :key="item" @click="showItem(item)">
       {{ item }}
     </div>
@@ -25,14 +25,15 @@ export default {
 
 <style scoped>
 .gallery {
-  /* background: url("../assets/dots.svg"); */
+  scroll-snap-align: start;
+  width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  /* flex-basis: 40vmin; */
 }
 .item {
   color: yellow;
@@ -41,8 +42,6 @@ export default {
   background: red;
   margin: 2.5vmin;
   cursor: pointer;
-  flex-shrink: 1;
-  /* flex-grow: 1; */
 }
 .overlay {
   position: absolute;
@@ -50,13 +49,5 @@ export default {
   height: 100%;
   background: grey;
   z-index: 100;
-}
-
-.screen {
-  scroll-snap-align: start;
-  width: 100%;
-  min-height: 100%;
-  top: 0px;
-  left: 0px;
 }
 </style>

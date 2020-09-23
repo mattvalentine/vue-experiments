@@ -2,7 +2,7 @@
   <div id="app">
     <Welcome />
     <Screen class="dots" />
-    <HorizontalSlide />
+    <HorizontalSlide id="history" />
     <Screen class="hex" />
     <Gallery @showItem="showItem()" />
     <Overlay :show="showOverlay" />
@@ -57,6 +57,10 @@ export default {
   },
   destroyed: function() {
     window.removeEventListener("resize", this.setsize);
+  },
+  mounted: function() {
+    const history = document.getElementById("history");
+    history.scrollLeft = history.scrollWidth - history.offsetWidth;
   },
 };
 </script>

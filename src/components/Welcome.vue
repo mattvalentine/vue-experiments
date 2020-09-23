@@ -10,9 +10,10 @@ export default {
 
 <style scoped>
 .welcome {
-  background: aliceblue;
-  color: black;
-  min-height: 100%;
+  scroll-snap-align: start;
   width: 100%;
+  min-height: 100%;
+  background: lightblue;
+  color: black;
 }
 </style>
