@@ -84,7 +84,7 @@ body {
   color: white;
   height: 100vh;
   width: 100vw;
-  /* display: flex; */
+  font-size: 2em;
 }
 
 *::-webkit-scrollbar {
@@ -102,7 +102,7 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

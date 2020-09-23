@@ -13,8 +13,18 @@ export default {
   scroll-snap-align: start;
   width: 100%;
   min-height: 100%;
-  background-color: lightblue;
-  background-image: url("../assets/hexadots-dark.svg");
-  color: black;
+  background-color: black;
+  /* background-image: url("../assets/hexadots-dark.svg"); */
+  background-image: url("../assets/test1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+
+  /* background-size: cover;
+  background-position-x: left;
+  background-position-y: top; */
+
+  /* color: black; */
 }
 </style>

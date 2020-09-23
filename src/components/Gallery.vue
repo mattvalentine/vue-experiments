@@ -61,12 +61,15 @@ export default {
   flex-wrap: wrap;
 }
 .item {
-  color: yellow;
+  color: white;
   width: 40vmin;
   height: 40vmin;
-  background: red;
+  background: darkgray;
   margin: 2.5vmin;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .overlay {
   position: absolute;
