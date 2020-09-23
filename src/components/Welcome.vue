@@ -13,7 +13,8 @@ export default {
   scroll-snap-align: start;
   width: 100%;
   min-height: 100%;
-  background: lightblue;
+  background-color: lightblue;
+  background-image: url("../assets/hexadots-dark.svg");
   color: black;
 }
 </style>
