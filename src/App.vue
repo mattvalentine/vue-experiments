@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Welcome />
     <Screen class="dots" />
     <HorizontalSlide />
     <Screen class="hex" />
@@ -12,10 +13,11 @@
 import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
 
-import Screen from "./components/Screen.vue";
-import HorizontalSlide from "./components/HorizontalSlide.vue";
+import Screen from "./components/Screen";
+import HorizontalSlide from "./components/HorizontalSlide";
 import Gallery from "./components/Gallery";
 import Overlay from "./components/Overlay";
+import Welcome from "./components/Welcome";
 
 export default {
   name: "App",
@@ -24,10 +26,11 @@ export default {
     HorizontalSlide,
     Gallery,
     Overlay,
+    Welcome,
   },
   data: function() {
     return {
-      showOverlay: true,
+      showOverlay: false,
     };
   },
   methods: {
@@ -36,15 +39,33 @@ export default {
       console.log("toggle");
       this.showOverlay = true;
     },
+    goto: function(anchorname) {
+      document
+        .getElementById(anchorname)
+        .scrollIntoView({ behavior: "smooth" });
+    },
+    setsize: function() {
+      var newheight = window.innerHeight + "px";
+      var newwidth = window.innerWidth + "px";
+      document.body.style.setProperty("height", newheight);
+      document.body.style.setProperty("width", newwidth);
+    },
   },
   created: function() {
-    document.getElementById("app").style.width = innerWidth;
-    document.getElementById("app").style.height = innerHeight;
+    this.setsize();
+    window.addEventListener("resize", this.setsize);
+  },
+  destroyed: function() {
+    window.removeEventListener("resize", this.setsize);
   },
 };
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0px;
   background: black;
