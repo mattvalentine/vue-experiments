@@ -8,7 +8,7 @@
         :key="item"
         @click="showItem(item)"
       >
-        {{ item }}
+        Item:{{ item }}
       </div>
     </div>
   </div>
@@ -64,12 +64,14 @@ export default {
   color: white;
   width: 40vmin;
   height: 40vmin;
-  background: darkgray;
+  background-color: darkgray;
   margin: 2.5vmin;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("../assets/test1.jpg");
+  background-size: cover;
 }
 .overlay {
   position: absolute;
