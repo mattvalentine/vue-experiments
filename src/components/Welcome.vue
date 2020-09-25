@@ -1,6 +1,6 @@
 <template>
   <div class="welcome">
-    <div class="topspace"></div>
+    <!-- <div class="topspace"></div> -->
     <div class="sides">
       <div class="banner"></div>
     </div>
