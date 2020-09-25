@@ -37,7 +37,7 @@ export default {
       fader3Element.classList.remove("flrstart");
       fader4Element.classList.remove("flrstart");
 
-      setTimeout(this.unshow, 3000);
+      setTimeout(this.unshow, 3500);
     },
   },
   mounted: function() {
@@ -101,7 +101,7 @@ export default {
   background: var(--dark-grad);
   transition: background 1s 0s ease-out, height 1s 1s ease-out,
     top 1s 1s ease-out, width 0.5s 0s ease-in-out, left 0.5s 0s ease-in-out,
-    opacity 2.5s 0.5s ease-in-out;
+    opacity 3s 0.5s ease-in-out;
 }
 .centerStart {
   width: 1%;
@@ -122,6 +122,6 @@ export default {
   transition: background 1s 0s ease-out, height 1s 1s ease-out,
     top 1s 1s ease-out, bottom 1s 1s ease-out, width 0.5s 0s ease-in-out,
     left 0.5s 0s ease-in-out, right 0.5s 0s ease-in-out,
-    opacity 2s 0.5s ease-in-out;
+    opacity 3s 0.5s ease-in-out;
 }
 </style>
