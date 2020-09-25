@@ -4,10 +4,12 @@
     <Screen class="dots" />
     <HorizontalSlide />
     <Screen class="hex" />
+    <Transition start="red" end="blue" />
     <Gallery @showItem="showItem()" />
     <Footer />
     <Overlay :show="showOverlay" />
     <Drama :show="showDrama" />
+    <div class="testmenu">X</div>
   </div>
 </template>
 
@@ -22,6 +24,7 @@ import Overlay from "./components/Overlay";
 import Welcome from "./components/Welcome";
 import Footer from "./components/Footer";
 import Drama from "./components/Drama";
+import Transition from "./components/Transition";
 
 export default {
   name: "App",
@@ -33,6 +36,7 @@ export default {
     Welcome,
     Footer,
     Drama,
+    Transition,
   },
   data: function() {
     return {
@@ -52,15 +56,24 @@ export default {
         .scrollIntoView({ behavior: "smooth" });
     },
     setsize: function() {
-      var newheight = window.innerHeight + "px";
-      var newwidth = window.innerWidth + "px";
-      document.body.style.setProperty("height", newheight);
-      document.body.style.setProperty("width", newwidth);
+      const appElement = document.getElementById("app");
+      const newHeight = window.innerHeight + "px";
+      const newWidth = window.innerWidth + "px";
+      document.body.style.setProperty("height", newHeight);
+      document.body.style.setProperty("width", newWidth);
+      appElement.style.setProperty("height", newHeight);
+      appElement.style.setProperty("width", newWidth);
     },
   },
   created: function() {
     this.setsize();
     window.addEventListener("resize", this.setsize);
+    var lockFunction = window.screen.orientation.lock;
+    if (lockFunction.call(window.screen.orientation, "landscape")) {
+      console.log("Orientation locked");
+    } else {
+      console.error("There was a problem in locking the orientation");
+    }
   },
   destroyed: function() {
     window.removeEventListener("resize", this.setsize);
@@ -82,9 +95,8 @@ body {
   background: black;
   box-sizing: border-box;
   color: white;
-  height: 100vh;
-  width: 100vw;
-  font-size: 2em;
+  font-size: 1.25em;
+  position: absolute;
 }
 
 *::-webkit-scrollbar {
@@ -111,17 +123,28 @@ body {
   overflow: auto;
   scroll-snap-type: y proximity;
 }
-.red {
-  background-color: red;
-}
-.blue {
-  background-color: blue;
-}
+
 .dots {
   background-image: url("assets/dots.svg");
 }
 
 .hex {
   background-image: url("assets/hexadots.svg");
+}
+
+.testmenu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  opacity: 50%;
 }
 </style>
