@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <div class="title"><h1>Title</h1></div>
+    <div class="title"><h1>Horizontal Slide</h1></div>
     <div class="slideholder">
-      <div class="slide" v-for="slide in slides" :key="slide">{{ slide }}</div>
+      <div class="slide" v-for="slide in slides" :key="slide">
+        <img class="bigimage" src="../assets/test1.jpg" />
+      </div>
     </div>
   </div>
 </template>
@@ -49,5 +51,27 @@ export default {
   flex-shrink: 0;
   width: 100%;
   height: 100%;
+  /* background-image: url("../assets/test2.jpg"); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  /* align-content: center; */
+  /* justify-content: space-between; */
+  /* justify-items: center; */
+}
+.slide > p {
+  /* height: ; */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 800px;
+  max-width: 100%;
+}
+.bigimage {
+  width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 </style>
